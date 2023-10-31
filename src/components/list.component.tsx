@@ -1,3 +1,5 @@
+import CardComponent from "./card.component";
+
 interface EventC {
     date: Date,
     eventName: string,
@@ -8,13 +10,13 @@ interface IProps {
 }
 
 function ListComponent(props: IProps) {
-    const {listEvents} = props;
-    return(
+    const { listEvents } = props;
+    return (
         <ul>
-            {listEvents.map(ev=> {
+            {listEvents.map(ev => {
                 return (
-                    <li key={ev.eventName} >{ev.eventName}</li>
-                )     
+                    <CardComponent date={ev.date} eventName={ev.eventName} />
+                )
             })}
         </ul>
     )
