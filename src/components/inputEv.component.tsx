@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { FormEvent, useState } from 'react';
 import moment from 'moment';
+import { storageSchedule } from '../utils/utils';
 
 interface EventC {
     id: number,
@@ -38,6 +39,7 @@ function InputEventComponent(props: IProps) {
         }
 
         const newListEv = [{ id: listEv.length + 1, date: new Date(date), eventName: ev, note }, ...listEv]
+        storageSchedule(newListEv)
         setList(newListEv)
 
         setEv('')
