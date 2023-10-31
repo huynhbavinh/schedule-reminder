@@ -10,11 +10,7 @@ function LeftContentWrapper(props: IProps) {
     return (
         <>
             <h1>{title ?? "Upcoming event"}</h1>
-            {elements.map(el=> {
-                return(
-                    {el}
-                )
-            })}
+            {elements}
         </>
     )
 }

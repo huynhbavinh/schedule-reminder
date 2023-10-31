@@ -8,7 +8,7 @@ interface EventC {
 function CardComponent(props: EventC) {
     const { date, eventName } = props;
     return (
-        <Card>
+        <Card style={{marginBottom: '0.3rem'}}>
             <Card.Header>Date: {date.toISOString()}</Card.Header>
             <Card.Body>
                 <Card.Title>Special title treatment : {eventName}</Card.Title>
