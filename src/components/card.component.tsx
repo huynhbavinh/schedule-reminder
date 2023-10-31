@@ -14,7 +14,9 @@ interface IProps {
 function CardComponent(props: IProps) {
     const [isHovering, setHovering] = useState(false)
     const { event, setTarget } = props;
-
+    const beautifulFormat = {
+        ...event
+    }
     const handleClick = (e: EventC) => {
         setTarget(e)
     }
@@ -26,11 +28,11 @@ function CardComponent(props: IProps) {
             onClick={()=> { handleClick(event) }}
             className={isHovering ? 'bg-secondary-subtle' : ''}
         >
-            <Card.Header>Date: {event.date.toISOString()}</Card.Header>
+            <Card.Header>Date: {beautifulFormat.date.toISOString().split('T')[0] + ' ' + beautifulFormat.date.toISOString().split('T')[1].split('Z')[0].split('.')[0]}</Card.Header>
             <Card.Body>
-                <Card.Title>Special title treatment : {event.eventName}</Card.Title>
+                <Card.Title>Special day for: {event.eventName}</Card.Title>
                 <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
+                    {event.note}
                 </Card.Text>
             </Card.Body>
         </Card>

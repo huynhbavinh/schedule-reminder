@@ -53,7 +53,7 @@ function InputEventComponent(props: IProps) {
 
                         <Form.Group as={Col} controlId="formGridPassword">
                             <Form.Label>Date Picker</Form.Label>
-                            <Form.Control type="date" required
+                            <Form.Control type="datetime-local" required
                                 onChange={(e) => { setDate(new Date(e.target.value)) }}
                             />
                         </Form.Group>

@@ -31,7 +31,7 @@ function App() {
   return (
     <>
       <Responsive84
-        leftContent={<LeftContentWrapper elements={leftContents} />}
+        leftContent={<LeftContentWrapper elements={leftContents} title='Your schedule' />}
         rightContent={<ClockComponent eventName={target.eventName} date={target.date} note={target.note} />}
       />
     </>
