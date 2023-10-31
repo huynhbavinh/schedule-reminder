@@ -3,6 +3,7 @@ import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown'
 interface IProps {
     eventName: string,
     date: Date,
+    note: string,
 }
 
 function ClockComponent(props: IProps) {
