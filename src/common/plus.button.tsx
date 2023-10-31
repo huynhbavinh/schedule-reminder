@@ -3,6 +3,7 @@ import InputEventComponent from "../components/inputEv.component";
 import { useState } from "react";
 
 interface EventC {
+    id: number;
     date: Date,
     eventName: string,
     note: string

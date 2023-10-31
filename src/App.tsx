@@ -9,9 +9,12 @@ import { getClosestDate, getScheduleFromStorage, storageSchedule } from './utils
 function App() {
   const listEvent = getScheduleFromStorage();
 
-  const sortClosestDay = (getClosestDate(listEvent.map((e: { date: Date }) => (e.date)))).map(e => ({ date: new Date(e), eventName: '', note: '' }))
+  const sortClosestDay = (getClosestDate(listEvent.map((e: { date: Date }) => (e.date))))
+    .map((e, i) => ({ id: i+1, date: new Date(e), eventName: '', note: '' }))
+    .filter(e => (e.date.getTime() > new Date(Date.now()).getTime()))
+
   for (let index = 0; index < listEvent.length; index++) {
-    for (let index1 = 0; index1 < listEvent.length; index1++) {
+    for (let index1 = 0; index1 < sortClosestDay.length; index1++) {
       if (new Date(listEvent[index].date).getTime() === new Date(sortClosestDay[index1].date).getTime()) {
         sortClosestDay[index1].eventName = listEvent[index].eventName
         sortClosestDay[index1].note = listEvent[index].note

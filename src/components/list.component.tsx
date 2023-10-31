@@ -2,6 +2,7 @@ import CardComponent from "./card.component";
 import "../styles/list.styles.css"
 
 interface EventC {
+    id: number,
     date: Date,
     eventName: string,
     note: string
